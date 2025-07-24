@@ -20,7 +20,7 @@ jobs:
             apt-get update -y
             apt-get install -y make fonts-ebgaramond
             make
-      - uses: actions/upload-artifact@vč
+      - uses: actions/upload-artifact@v4
         with:
           name: book
           path: out.pdf
