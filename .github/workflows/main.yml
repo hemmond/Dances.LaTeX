@@ -1,0 +1,27 @@
+name: Deploy PDF
+
+on:
+  push:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/texlive-action@v3
+        with:
+          os: debian
+          run: |
+            # Install system dependencies
+            export DEBIAN_FRONTEND=noninteractive
+            apt-get update -y
+            apt-get install -y make fonts-ebgaramond
+            make
+      - uses: actions/upload-artifact@vč
+        with:
+          name: book
+          path: out.pdf
+          overwrite: true
