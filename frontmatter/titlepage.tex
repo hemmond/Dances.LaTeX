@@ -1,0 +1,40 @@
+\pagestyle{empty}
+% =================
+% Title page
+% =================
+\begin{titlepage}
+	\centering
+	\newgeometry{top=1in,bottom=1in,right=0in,left=0in}
+    \thispagestyle{empty}
+	~	
+
+    % Author name
+	\vspace{24pt}
+	{\scshape\large \authorname\par}
+
+    % Book title
+	\vspace{4pt}
+	{\scshape\Huge \booktitle\par}
+
+    % Subtitle (if defined)
+    \ifx\subtitle\undefined\else
+        \if\relax\detokenize\expandafter{\subtitle}\relax\else
+            \vspace{6pt}
+	        {\scshape\large \subtitle\par}
+	        \vspace{\stretch{1.25}}
+        \fi
+    \fi
+
+    % Translator (if defined)
+    \ifx\translatorname\undefined\else
+        \if\relax\detokenize\expandafter{\translatorname}\relax\else
+            {\vspace{18pt}\itshape\large{Translated by}\par}
+	        \vspace{6pt}
+            {\itshape\Large\translatorname\par}
+        \fi
+    \fi
+
+    % Publisher (bottom of the page)
+    \vspace{\stretch{6}}
+	{\Huge\scshape\large\publisher\par}
+\end{titlepage}

@@ -1,0 +1,72 @@
+% =============================================================================
+% Victoria-Regia book template by @jancarauma
+% 2025 (c) Janderson Gomes
+% For further details, visit: artientista.blogspot.com (Caraumã)
+% 16/06/2025 - amazon brazil
+% =============================================================================
+
+% Document class and layout settings
+\documentclass[10pt,openany]{book}    % Standard book class with 12pt font and chapters starting on any page
+
+% Golden ratio constant for layout calculations
+\newcommand{\goldenratio}{1.618}
+
+% Font encoding ensures proper glyph output
+\usepackage[T1]{fontenc}
+
+% for musical scores
+
+\usepackage{musixtex} 
+
+\usepackage{multicol}
+\usepackage{wasysym} % for \longs
+\usepackage{todonotes}
+
+\def\nnotes{\vnotes1.6\elemskip}
+\def\nnnotes{\vnotes1.28\elemskip}
+\newcommand{\HRule}{\par
+  \vspace*{\dimexpr-\parskip-\baselineskip+0pt}
+  \noindent\rule{\linewidth}{0.5mm}\par
+  \vspace*{\dimexpr-\parskip-.5\baselineskip+0pt}}
+  
+% --- Book metadata definitions ---
+\newcommand{\authorname}{JaneAusten.cz}          % Primary author
+\newcommand{\booktitle}{Tance JaneAusten.cz}     % Main title
+\newcommand{\subtitle}{Primárně anglické kontratance období empíru}   % Subtitle (optional)
+\newcommand{\publisher}{JaneAusten.cz}                 % Publisher name
+\newcommand{\editionyear}{2025}                  % Edition year for print run
+
+
+% Additional package imports (layout, styling, utilities)
+\usepackage{misc/options}  % Custom configuration package (margins, headers)
+
+\begin{document}
+
+% ===== Front Matter =====
+\frontmatter                      % Roman numerals for front matter
+\input{frontmatter/titlepage}     % Title page layout
+\input{frontmatter/copyrightpage-gamecon2025} % Copyright and licensing information
+%\input{frontmatter/preface-gamecon2025}       % Preface or acknowledgments section
+\input{frontmatter/tocpage}       % Table of contents
+
+% ===== Main Content =====
+\mainmatter                       % Switch to Arabic numbering
+\pagestyle{fancy}                 % Fancy headers and footers for chapters
+
+% Chapter inputs
+%\inputdance{content/all_in_a_garden_green}
+%\inputdance{content/emmas_waltz}
+%\inputdance{content/hole_in_the_wall}
+\inputdance{content/indian_queen}
+%\inputdance{content/jamaica}
+%\inputdance{content/my_lord_byrons_maggot}
+%\inputdance{content/pauls_alley}
+%\inputdance{content/rakes_of_rochester}
+\inputdance{content/row_well_ye_mariners}
+%\inputdance{content/swedish_country_dance}
+\inputdance{content/upon_a_summers_day}
+
+% ===== Back Matter =====
+\backmatter                       % Unnumbered appendices and bibliography
+
+\end{document}
