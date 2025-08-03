@@ -27,7 +27,15 @@
 \usepackage{url}
 \usepackage{pgfornament}
 \usepackage[hidelinks]{hyperref}
+\usepackage{imakeidx}
+\makeindex[name=longDMin,title={Longways double minor}]
+\makeindex[name=longTMin,title={Longways triple minor}]
+\makeindex[name=long3s,title={Longway of triplets}]
+\makeindex[name=set4,title={Sets of four}]
+\makeindex[name=set6,title={Sets of six}]
+\makeindex[name=set12,title={Sets of twelve}]
 
+\newcommand{\danceName}[2]{\chapter{#1}\index[#2]{#1}}
 %\newcommand{\hsp}{\kern 1pt}    % Custom command for fine-tuning spacing in nested quotation marks
 
 % Paragraph formatting settings

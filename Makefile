@@ -3,4 +3,4 @@ all:
 	cp main.pdf out.pdf
 
 clean:
-	rm -rf main.pdf main.aux main.toc missfont.log musixtex.log
+	rm -rf main.pdf main.aux main.toc missfont.log musixtex.log *.idx *.ilg *.ind

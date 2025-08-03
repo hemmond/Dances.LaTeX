@@ -1,0 +1,115 @@
+\danceName{THIS IS A TEMPLATE}{longDMin}% parameters Dance name - index under which to list the dance. List of indexes
+%can be easily seen in backmatter/indices.tex, in case a new index is required, must be added both to that file
+%and misc/options.sty
+
+{\large Setup; music\hfill Author, year}  % E.g. {\large Longway for six; 3x AABB\hfill Playford, 1651}
+\todo{Name and author}
+
+\begin{music}
+    \smallmusicsize%
+    \parindent0mm%
+    \raggedbottom%
+    \stafftopmarg=1\Interligne
+    \staffbotmarg=1\Interligne
+    \nobarnumbers%
+    \generalmeter{\allabreve}%  4/4 meter (C meter). Replace with \meterfrac{X}{Y} for X over Y meter
+    \generalsignature{0}% Positive general signature for N amount of sharps for the whole piece, negative for N flats
+    \startpiece% From here on now actual notes start. NO UNNECESSARY WHITESPACES, end every line with %comment%
+% https://icking-music-archive.org/software/musixtex/musixdoc.pdf
+% every bar of music starts with either of nnnotes, nnotes, notes, notesp, Notes, Notesp, NOtes, NOTes, NOTEs or NOTES.
+% it determines relative spacing within that bar between individual notes, in increasing steps in order above.
+% every note is two letters - length and stem direction, both in small letters, here for clarity in capitals
+% \wh (whole note, exception from naming format as it has no stem)
+% stems may be Up, Low, or Auto (\Xu, \Xl, \Xa). explicit is preferable but auto usually works
+% note lengths are Half, Quarter, eight( C ), 16th, 32nd, 64th and 128th are CC, CCC, CCCC, CCCCC respectively
+% (\hX, \qX, \cX, \ccX, \cccX, \ccccX, \cccccX)
+% Immediately after follows the position of note - either numerical (0 is the lowest line, 1 is space above,
+% two is second lowest line...) or a letter position (has to be written with space inbetween it and the note,
+% letters are a-z and A-Z starting from _somewhere_)
+% Every bar of music ends with \en\xbar% (or \en\alaligne% if you want the next bar to start on next line)
+%
+% Sharps act like a note on their own and are written \shX (X again position as number or letter), similarly
+% flats \flX. Appending p to any note name (e.g. \qup) makes that note with a dot after (prolonged).
+%
+% Beams may be coded using \IXYABCD, where X is cardinality of beam (b for single beam, bb for double, up to
+% bbbb for quadruple), Y is direction (u or l), A is reference number (can be usually always 0), B is pitch of
+% starting note (number or letter), C pitch of ending note, D amount of notes on the beam -1. E.g. \Ibbu0132
+% for a double upper beam extending over 3 notes, where the first note is 1 and the last note is 3. Notes are
+% then added to the beam using \qbXY, where X is the beam reference number (A in beam definition) and Y is note
+% pitch as normal. Before last note of beam, \tbuX / \tblX is used to correctly terminate the beam, X again
+% reference number
+% For beams with only two notes, \DqbuXY, \DqblXY, \DqbbuXY, \DqbblXY may be used instead, XY being the pitches
+% of the two notes, nothing further is required then.
+%
+% Pauses/rests are coded (whole-half-quarter-...) \pause-\hp-\qp-\ds-\qs-\hs-\qqs, dotting is possible as usual
+%
+% Slurs may be coded using \slurXYAB, where X is start note pitch, Y is end note pitch, A is direction (u or d) and B
+% is amount of notes in slur - 1. E.g. \slur13u2 is a three-note upper slur from note 1 to note 3
+%
+% \en\zzleftrightrepeat may be used instead of other methods of ending bar to set a right repeat, new line, and set e
+% left repeat, \en\zzrightrepeat without inserting the left repeat on following line, \en\zleftrightrepeat without
+% newline. \zleftrepeat before start of bar inserts left repeat there, \en\setrightrepeat inserts right repeat without
+% forcing line break
+%%%%%%%% PART A %%%%%%%%
+    \zleftrepeat%
+    \nnotes\qa0\qa1\qa2\qa3\en\xbar%
+    \notes\qa4\qa5\qa6\qa7\en\xbar%
+    \Notes\qa8\qa9\qa{10}\qa{11}\en\xbar%
+    \Notesp\qa{12}\qa{13}\qa{14}\qa{15}\en\alaligne%
+%
+    \NOtes\wh1\en\xbar%
+    \NOtesp\ha2\ha3\en\xbar%
+    \NOTes\hap4\qa5\en\xbar%
+    \NOTesp\Dqbl67\Dqbbu89\Dqbbl{10}{11}\en\zzleftrightrepeat%
+%%%%%%%% PART B %%%%%%%%
+    \nnotes\slur03u3\qa0\qa1\qa2\qa3\en\xbar%
+    \notes\slur46d2\qa4\qa5\qa6\qa7\en\xbar%
+    \Notes\Ibu08{11}3\qb08\qb09\qb0{10}\tbu0\qb0{11}\en\xbar%
+    \Notesp\Ibbbl033{15}%
+    \qb03\qb04\qb05\qb06\qb03\qb04\qb05\qb06\qb03\qb04\qb05\qb06\qb03\qb04\qb05\tbl0\qb06\en\alaligne%
+%
+    \NOtes\wh1\en\xbar%
+    \NOtesp\ha2\ha3\en\xbar%
+    \NOTes\hap4\qa5\en\xbar%
+    \NOTesp\Dqbl67\Dqbbu89\Dqbbl{10}{11}\en\setrightrepeat%
+    \endpiece%
+    \todo{Music}
+\end{music}
+
+\begin{multicols}{2}
+    This is a template original dance description. It cu{\longs}tomary u{\longs}e{\longs} long S whereever it appears in original text, and \_.\_, resp \_:\_ to mark the repetition symbols from original texts
+    \columnbreak
+
+    Formating of original text is maintained as closely as possible where it makes sense
+\end{multicols}
+
+\HRule
+
+Most dances have descriptions written just as a nonformatted text, in that case, no multicolumn environment is needed.
+The original description is then ended by a double \verb!\Hrule!
+\todo{Dance description}
+\HRule
+\HRule
+\vspace{1em}
+\begin{description}
+    \item[A1]
+    \item[1-2]Popis v českém jazyce píšeme na doby odpovídající hudbě, kterou máme k dispozici
+    \item[3-4]Používáme ustálená spojení u typických figur, kde to dává smysl
+    \item[1-4]Jinak používáme natolik přesný popis, abychom ho sami pochopili kdybychom tanec neznali
+    \item[5-8]Set and turn vlevo
+    \item[9-16]Ditto, set and turn vpravo
+    \item[B1]
+    \item[1-2] Zapisujeme tanec v pořadí, v jakém má být tančen, nepřeskakujeme části
+    \item[3-4] 1.P přejde k 2.D a podá levou ruku
+    \item[5-6] 1.P přejde k 3.D a podá pravou, pak levou ruku
+    \item[7-8] 1.P políbí 3.D na pravou a levou tvář
+    \item[9-10] 1.P a 3.D zátočka za obě o celé, 2.P a 3.P step up
+    \item[11-20] dtto vše, ale provádí 1.D, na konci 2.D a 3.D step up
+    \item[A2]
+    \item[1-16] Sides R, set and turn, sides L, set and turn
+    \item[B2] = B1
+    \item[A3]
+    \item[1-16] Arms R, set and turn, arms L, set and turn
+    \item[B3] = B1
+\end{description}
+\todo{Popis tance}
