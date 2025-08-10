@@ -14,8 +14,31 @@
 \addto\captionsczech{\renewcommand{\contentsname}{Obsah}} % Customize the table of contents title
 % LANGUAGE TRANSLATIONS ------------------------------------------------------------------
 
-%\usepackage{mathpazo}
-%\linespread{1.1}
+% Font encoding ensures proper glyph output
+\usepackage[T1]{fontenc}
+
+\usepackage[style=authoryear, backend=biber, style=numeric]{biblatex}
+\makeatletter
+\let\blx@imc@addspace\addspace
+\blx@regimcs{\addspace}
+\makeatother
+
+% for musical scores
+
+\usepackage{musixtex}
+
+\usepackage{multicol}
+\usepackage{wasysym} % for \longs
+\usepackage{todonotes}
+
+\def\nnotes{\vnotes1.6\elemskip}
+\def\nnnotes{\vnotes1.28\elemskip}
+%\newcommand{\HRule}{\par
+%  \vspace*{\dimexpr-\parskip-\baselineskip+0pt}
+%  \noindent\rule{\linewidth}{0.5mm}\par
+%  \vspace*{\dimexpr-\parskip-.5\baselineskip+0pt}}
+%\newcommand{\HRule}{\par\noindent\rule{\textwidth}{1pt}}
+\newcommand{\HRule}{\vspace*{1pt}\hrule\vspace*{1pt}}
 
 \usepackage{lettrine}   % Enables dropped capital letters at the beginning of chapters
 \usepackage{graphicx}   % Standard package for including graphics
@@ -28,14 +51,25 @@
 \usepackage{pgfornament}
 \usepackage[hidelinks]{hyperref}
 \usepackage{imakeidx}
-\makeindex[name=longDMin,title={Longways double minor}]
-\makeindex[name=longTMin,title={Longways triple minor}]
-\makeindex[name=long3s,title={Longway of triplets}]
-\makeindex[name=set4,title={Sets of four}]
-\makeindex[name=set6,title={Sets of six}]
-\makeindex[name=set12,title={Sets of twelve}]
+\usepackage{array}
+
+\addbibresource{misc/sources.bib}
 
 \newcommand{\danceName}[2]{\chapter{#1}\index[#2]{#1}}
+\newcommand\Pfa{\includegraphics[width=.8em]{misc/Playford1}}
+\newcommand\Pfb{\includegraphics[width=.8em]{misc/Playford2}}
+\newcommand\Pfc{\includegraphics[width=.8em]{misc/Playford3}}
+\newcommand\PfM{\includegraphics[width=.8em]{misc/PlayfordMan}}
+\newcommand\PfW{\includegraphics[width=.8em]{misc/PlayfordWo}}
+\newcommand\Thaaa{\includegraphics[width=.8em]{misc/Thompson111}}
+\newcommand\Thaab{\includegraphics[width=.8em]{misc/Thompson112}}
+\newcommand\Thaba{\includegraphics[width=.8em]{misc/Thompson121}}
+\newcommand\Thabb{\includegraphics[width=.8em]{misc/Thompson122}}
+\newcommand\Thbaa{\includegraphics[width=.8em]{misc/Thompson211}}
+\newcommand\Thbab{\includegraphics[width=.8em]{misc/Thompson212}}
+\newcommand\Thbba{\includegraphics[width=.8em]{misc/Thompson221}}
+\newcommand\Thbbb{\includegraphics[width=.8em]{misc/Thompson222}}
+
 %\newcommand{\hsp}{\kern 1pt}    % Custom command for fine-tuning spacing in nested quotation marks
 
 % Paragraph formatting settings

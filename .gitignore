@@ -7,3 +7,7 @@
 *.ilg
 *.ind
 .idea
+*.bbl
+*.bcf
+*.blg
+main.run.xml

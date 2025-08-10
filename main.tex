@@ -11,26 +11,6 @@
 % Golden ratio constant for layout calculations
 \newcommand{\goldenratio}{1.618}
 
-% Font encoding ensures proper glyph output
-\usepackage[T1]{fontenc}
-
-% for musical scores
-
-\usepackage{musixtex} 
-
-\usepackage{multicol}
-\usepackage{wasysym} % for \longs
-\usepackage{todonotes}
-
-\def\nnotes{\vnotes1.6\elemskip}
-\def\nnnotes{\vnotes1.28\elemskip}
-%\newcommand{\HRule}{\par
-%  \vspace*{\dimexpr-\parskip-\baselineskip+0pt}
-%  \noindent\rule{\linewidth}{0.5mm}\par
-%  \vspace*{\dimexpr-\parskip-.5\baselineskip+0pt}}
-%\newcommand{\HRule}{\par\noindent\rule{\textwidth}{1pt}}
-\newcommand{\HRule}{\vspace*{1pt}\hrule\vspace*{1pt}}
-
 % --- Book metadata definitions ---
 \newcommand{\authorname}{JaneAusten.cz}          % Primary author
 \newcommand{\booktitle}{Tance JaneAusten.cz}     % Main title
@@ -41,6 +21,8 @@
 
 % Additional package imports (layout, styling, utilities)
 \usepackage{misc/options}  % Custom configuration package (margins, headers)
+
+\input{frontmatter/indices}
 
 \begin{document}
 
@@ -56,8 +38,12 @@
 \pagestyle{fancy}                 % Fancy headers and footers for chapters
 
 % Chapter inputs
+\inputdance{content/playford1651explanation}
 \inputdance{content/all_in_a_garden_green}
+\inputdance{content/blew_cap}
 \inputdance{content/emmas_waltz}
+\inputdance{content/the_fandango}
+\inputdance{content/the_fandango_set3}
 \inputdance{content/hole_in_the_wall}
 \inputdance{content/indian_queen}
 \inputdance{content/jamaica}
@@ -71,5 +57,6 @@
 % ===== Back Matter =====
 \backmatter                       % Unnumbered appendices and bibliography
 \input{backmatter/indices}
+\printbibliography
 
 \end{document}
