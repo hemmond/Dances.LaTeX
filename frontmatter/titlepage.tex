@@ -17,24 +17,22 @@
 	{\scshape\Huge \booktitle\par}
 
     % Subtitle (if defined)
-    \ifx\subtitle\undefined\else
-        \if\relax\detokenize\expandafter{\subtitle}\relax\else
-            \vspace{6pt}
-	        {\scshape\large \subtitle\par}
-	        \vspace{\stretch{1.25}}
-        \fi
-    \fi
+    \printifset{\subtitle}{
+        \vspace{6pt}
+        {\scshape\large \subtitle\par}
+        \vspace{\stretch{1.25}}
+    }
 
     % Translator (if defined)
-    \ifx\translatorname\undefined\else
-        \if\relax\detokenize\expandafter{\translatorname}\relax\else
-            {\vspace{18pt}\itshape\large{Translated by}\par}
-	        \vspace{6pt}
-            {\itshape\Large\translatorname\par}
-        \fi
-    \fi
+    \printifset{\translatorname}{
+        {\vspace{18pt}\itshape\large{Translated by}\par}
+        \vspace{6pt}
+        {\itshape\Large\translatorname\par}
+    }
 
     % Publisher (bottom of the page)
     \vspace{\stretch{6}}
-	{\Huge\scshape\large\publisher\par}
+    \printifset{\publisher}{
+        {\Huge\scshape\large\publisher\par}
+    }
 \end{titlepage}

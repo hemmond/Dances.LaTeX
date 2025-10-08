@@ -8,16 +8,22 @@
 % Document class and layout settings
 \documentclass[10pt,openany]{book}    % Standard book class with 12pt font and chapters starting on any page
 
+% \printifset{<macro>}{<content to print if <macro> is non-empty>}
+\newcommand{\printifset}[2]{%
+  \ifx#1\undefined\else%
+    \if\relax\detokenize\expandafter{#1}\relax\else%
+      #2% print the content
+    \fi
+  \fi
+}
+
 % Golden ratio constant for layout calculations
 \newcommand{\goldenratio}{1.618}
 
-% --- Book metadata definitions ---
-\newcommand{\authorname}{JaneAusten.cz}          % Primary author
-\newcommand{\booktitle}{Tance JaneAusten.cz}     % Main title
-\newcommand{\subtitle}{Primárně anglické kontratance období empíru}   % Subtitle (optional)
-\newcommand{\publisher}{JaneAusten.cz}                 % Publisher name
-\newcommand{\editionyear}{2025}                  % Edition year for print run
+\input{content/jane_austen_cz}
 
+\providecommand{\edition}{}
+\providecommand{\editionyear}{}
 
 % Additional package imports (layout, styling, utilities)
 \usepackage{misc/options}  % Custom configuration package (margins, headers)
@@ -30,30 +36,14 @@
 \frontmatter                      % Roman numerals for front matter
 \input{frontmatter/titlepage}     % Title page layout
 \input{frontmatter/copyright}     % Copyright and licensing information
-\input{frontmatter/preface-generic}       % Preface or acknowledgments section
+\printifset{\preface}{\preface{}}
 \input{frontmatter/tocpage}       % Table of contents
 
 % ===== Main Content =====
 \mainmatter                       % Switch to Arabic numbering
 \pagestyle{fancy}                 % Fancy headers and footers for chapters
 
-% Chapter inputs
-\inputdance{content/playford1651explanation}
-\inputdance{content/all_in_a_garden_green}
-\inputdance{content/blew_cap}
-\inputdance{content/emmas_waltz}
-\inputdance{content/the_fandango}
-\inputdance{content/the_fandango_set3}
-\inputdance{content/hole_in_the_wall}
-\inputdance{content/indian_queen}
-\inputdance{content/jamaica}
-\inputdance{content/miss_hamiltons_reel}
-\inputdance{content/my_lord_byrons_maggot}
-\inputdance{content/pauls_alley}
-\inputdance{content/rakes_of_rochester}
-\inputdance{content/row_well_ye_mariners}
-\inputdance{content/swedish_country_dance}
-\inputdance{content/upon_a_summers_day}
+\loadbookcontent
 
 % ===== Back Matter =====
 \backmatter                       % Unnumbered appendices and bibliography

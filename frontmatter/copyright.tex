@@ -7,23 +7,23 @@
 \vfill
 
 % First publication date
-First edition, \editionyear{}
+\printifset{\edition}{\edition{}}%
+\printifset{\edition}{\printifset{\editionyear}{, }}%
+\printifset{\editionyear}{\editionyear{}}
 
 % Copyright notice
-
-Tance JaneAusten.cz © 2025 by Jindřich Dítě is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/
-
+\printifset{\copyrightnotice}{\copyrightnotice{}}
 
 % License summary
-All content in this publication is licensed under the Creative Commons Attribution 4.0 International License. You are permitted to share, copy, and redistribute the material in any medium or format, provided that proper credit is given to the original author. For full license terms, visit \url{http://creativecommons.org/licenses/by/4.0/}.
-
+\printifset{\license}{\license{}}
 
 % ISBN (if available)
-\ifx\isbn\undefined\else\if\relax\detokenize\expandafter{\isbn}\relax\else{ISBN \isbn{}}\fi\fi
+\printifset{\isbn}{ISBN \isbn{}}
 
 %% Publisher logo
-%\includegraphics[width=0.07\linewidth]{frontmatter/logo-black.png}
-%
+\printifset{\publisherlogo}{\publisherlogo}
+
 %% Publisher name
-%Published by \publisher{}
-%}
+\printifset{\publisher}{
+    Published by \publisher
+}
