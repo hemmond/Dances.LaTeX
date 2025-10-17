@@ -24,15 +24,16 @@
 \usepackage{misc/global_options}  % Custom configuration package (margins, headers)
 
 \input{content/jane_austen_cz}
+% \input{content/gamecon2025}
 
 \begin{document}
 
 % ===== Front Matter =====
 \frontmatter                      % Roman numerals for front matter
-\input{frontmatter/titlepage}     % Title page layout
-\input{frontmatter/copyright}     % Copyright and licensing information
+\input{misc/titlepage}     % Title page layout
+\input{misc/copyright}     % Copyright and licensing information
 \printifset{\preface}{\preface{}}
-\input{frontmatter/tocpage}       % Table of contents
+\input{misc/tocpage}       % Table of contents
 
 % ===== Main Content =====
 \mainmatter                       % Switch to Arabic numbering
