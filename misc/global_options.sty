@@ -53,30 +53,10 @@
 \usepackage{imakeidx}
 \usepackage{array}
 
-\addbibresource{misc/sources.bib}
-
 \makeatletter
     \newcommand{\danceName}[1]{\chapter{#1}\def\DanceNameStr{#1}\@ifnextchar\bgroup{\danceNameInt}{}}
     \newcommand{\danceNameInt}[1]{\index[#1]{\DanceNameStr}\@ifnextchar\bgroup{\danceNameInt}{}}
 \makeatother % variable argument command \danceName defining chapter name and also adding said chapter to any number of indexes as following parameters
-
-\font\vse=cmr10 at 5pt\setbox0=\hbox{y} % https://tex.stackexchange.com/a/251527
-\newcommand{\ye}{\raise\ht0\rlap{\hbox to \wd0{\hfil\vse e\hfil}}\box0} % the "e over y" letter (thorn variation used after invention of print)
-
-\newcommand\Pfa{\includegraphics[width=.8em]{misc/Playford1}}
-\newcommand\Pfb{\includegraphics[width=.8em]{misc/Playford2}}
-\newcommand\Pfc{\includegraphics[width=.8em]{misc/Playford3}}
-\newcommand\PfM{\includegraphics[width=.8em]{misc/PlayfordMan}}
-\newcommand\PfW{\includegraphics[width=.8em]{misc/PlayfordWo}} % Playford-style symbols for 1st, 2nd and 3rd repetition, Man, and Woman
-
-\newcommand\Thaaa{\includegraphics[width=.8em]{misc/Thompson111}}
-\newcommand\Thaab{\includegraphics[width=.8em]{misc/Thompson112}}
-\newcommand\Thaba{\includegraphics[width=.8em]{misc/Thompson121}}
-\newcommand\Thabb{\includegraphics[width=.8em]{misc/Thompson122}}
-\newcommand\Thbaa{\includegraphics[width=.8em]{misc/Thompson211}}
-\newcommand\Thbab{\includegraphics[width=.8em]{misc/Thompson212}}
-\newcommand\Thbba{\includegraphics[width=.8em]{misc/Thompson221}}
-\newcommand\Thbbb{\includegraphics[width=.8em]{misc/Thompson222}} %thompson-style symbols for music repetition. First symbol amount of dots above, second amount of lines, third amount of dots below
 
 %\newcommand{\hsp}{\kern 1pt}    % Custom command for fine-tuning spacing in nested quotation marks
 

@@ -20,15 +20,10 @@
 % Golden ratio constant for layout calculations
 \newcommand{\goldenratio}{1.618}
 
-\input{content/jane_austen_cz}
-
-\providecommand{\edition}{}
-\providecommand{\editionyear}{}
-
 % Additional package imports (layout, styling, utilities)
-\usepackage{misc/options}  % Custom configuration package (margins, headers)
+\usepackage{misc/global_options}  % Custom configuration package (margins, headers)
 
-\input{frontmatter/indices}
+\input{content/jane_austen_cz}
 
 \begin{document}
 
@@ -43,11 +38,10 @@
 \mainmatter                       % Switch to Arabic numbering
 \pagestyle{fancy}                 % Fancy headers and footers for chapters
 
-\loadbookcontent
+\bookcontent
 
 % ===== Back Matter =====
 \backmatter                       % Unnumbered appendices and bibliography
-\input{backmatter/indices}
-\printbibliography
+\loadappendix
 
 \end{document}

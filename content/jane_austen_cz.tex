@@ -1,3 +1,7 @@
+% --- Specific book settings ---
+\usepackage{content/jane_austen_cz/common/jane_austen_options}  % Optional, but ther should at least be .bib package.
+\newcommand{\preindices}{}
+
 % --- Book metadata definitions ----
 \newcommand{\authorname}{JaneAusten.cz}         % Primary author (mandatory)
 \newcommand{\booktitle}{Tance JaneAusten.cz}    % Main title (mandatory)
@@ -13,7 +17,7 @@
 % }
 
 % --- Chapter inputs ---
-\newcommand{\loadbookcontent}{
+\newcommand{\bookcontent}{
     \inputdance{content/jane_austen_cz/playford1651explanation}
     \inputdance{content/jane_austen_cz/all_in_a_garden_green}
     \inputdance{content/jane_austen_cz/blew_cap}
@@ -30,6 +34,19 @@
     \inputdance{content/jane_austen_cz/row_well_ye_mariners}
     \inputdance{content/jane_austen_cz/swedish_country_dance}
     \inputdance{content/jane_austen_cz/upon_a_summers_day}
+}
+
+\newcommand{\loadappendix}{ %Mandatory, keep empty if not required.
+    \clearpage
+
+    \printindex[longDMin]
+    \printindex[longTMin]
+    \printindex[long3s]
+    \printindex[set4]
+    \printindex[set6]
+    \printindex[set12]
+
+    \printbibliography  % It was put here because bibliography should not be mandatory.
 }
 
 

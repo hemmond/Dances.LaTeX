@@ -1,0 +1,40 @@
+\addbibresource{content/jane_austen_cz/common/sources.bib}
+
+% the "e over y" letter (thorn variation used after invention of print)
+\font\vse=cmr10 at 5pt\setbox0=\hbox{y} % https://tex.stackexchange.com/a/251527
+\newcommand{\ye}{\raise\ht0\rlap{\hbox to \wd0{\hfil\vse e\hfil}}\box0}
+
+% Playford-style symbols for 1st, 2nd and 3rd repetition, Man, and Woman
+\newcommand{\Pfa}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Playford1}}
+\newcommand{\Pfb}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Playford2}}
+\newcommand{\Pfc}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Playford3}}
+\newcommand{\PfM}{\includegraphics[width=.8em]{content/jane_austen_cz/common/PlayfordMan}}
+\newcommand{\PfW}{\includegraphics[width=.8em]{content/jane_austen_cz/common/PlayfordWo}}
+
+% Thompson-style symbols for music repetition. First symbol amount of dots above, second amount of lines, third amount of dots below
+\newcommand{\Thaaa}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson111}}
+\newcommand{\Thaab}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson112}}
+\newcommand{\Thaba}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson121}}
+\newcommand{\Thabb}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson122}}
+\newcommand{\Thbaa}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson211}}
+\newcommand{\Thbab}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson212}}
+\newcommand{\Thbba}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson221}}
+\newcommand{\Thbbb}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson222}}
+
+% Prepare indices
+\makeindex[name=longDMin,title={Longways double minor}]
+\makeindex[name=longTMin,title={Longways triple minor}]
+\makeindex[name=long3s,title={Longway of triplets}]
+\makeindex[name=set4,title={Sets of four}]
+\makeindex[name=set6,title={Sets of six}]
+\makeindex[name=set12,title={Sets of twelve}]
+
+\newcommand{\DefineSource}[2]{%
+  \expandafter\newcommand\csname src-#1\endcsname{#2}%
+}
+\newcommand{\Source}[1]{\csname src-#1\endcsname}
+
+\DefineSource{Playford1651}{\href{https://www.pbm.com/~lindahl/playford_1651/playford_1651.pdf}{Playford, 1651\cite{playford1651}}}
+\DefineSource{Thompson1774}{\href{https://www.efdss.org/vwml-digitised-resources/historic-dance-and-tune-books/12991-thompsons1774}{Thompson, 1774}}
+\DefineSource{Porter1931}{\href{https://www.efdss.org/vwml-digitised-resources/historic-dance-and-tune-books/12991-thompsons1774}{Porter, Heffer, Heffer, 1931\cite{porter1933}}}
+
