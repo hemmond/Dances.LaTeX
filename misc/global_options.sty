@@ -135,3 +135,7 @@
 \definecolor{darkmagenta}{RGB}{139, 0, 139} 
 \definecolor{ultradarkmagenta}{RGB}{50, 0, 50}
 
+\newcommand{\DefineSource}[2]{%
+  \expandafter\newcommand\csname src-#1\endcsname{#2}%
+}
+\newcommand{\Source}[1]{\csname src-#1\endcsname}
