@@ -1,0 +1,54 @@
+\addbibresource{content/irish_ceili_dances/common/sources.bib}
+
+% Make "description" lists compact.
+\usepackage{enumitem}
+\setlist[description]{noitemsep,topsep=0pt}
+
+% Prepare indices
+
+% Tunes: 
+\makeindex[name=tune,title={Melodie}]
+    % Reel, Single Jig, Double Jig, Slip Jig
+
+% Type: 
+\makeindex[name=type,title={Typ tance}]
+    % Progresivní, promiskuitní, fixní, figurální, setové
+
+% Formace:
+\makeindex[name=formation,title={Formace}]
+    % longway, čtverylka, kruh, specifické...
+
+% Počet tanečníků
+\makeindex[name=dancersNum,title={Počet tanečníků}]
+
+
+% Sources:
+\DefineSource{Tricitka}{\href{https://www.bernards.cz/gallery/file/Ar-Rinci-Foirne.pdf}{Ár Rincí Fóirne, 2003\cite{tricitka}}}
+\DefineSource{Ztracenky}{\href{https://www.amazon.com/dp/1978405516}{Rinci Foirne Caillte: Volume I, 2017\cite{ztracenky}}}
+\DefineSource{Rinceoiri}{Rinceoirí, 1999\cite{rinceoiri}}
+
+\DefineSource{Orpen1931}{\href{https://s3.eu-west-1.amazonaws.com/prints.itma.ie/orpen/3496-BK.pdf}{Dances of Donegal (Grace Orpen, 1931)\cite{orpen1931}}}
+\DefineSource{Sheehan1902}{\href{https://s3.eu-west-1.amazonaws.com/prints.itma.ie/sheehan/3551-BK.pdf}{A Guide to Irish Dancing (J.~J.~Sheehan, 1902)\cite{sheehan1902}}}
+\DefineSource{OKeeffe1914}{\href{https://www.itma.ie/texts/okeeffe/}{A Handbook of Irish Dances (J.~G.~O’Keeffe, Art O’Brien, 1914)\cite{okeeffe1914}}}
+\DefineSource{SweetsOfMay}{\href{https://www.otma.ie/wp-content/uploads/2024/12/The-Sweets-of-May-Final.pdf}{The Sweets of May, 2009\cite{sweetsOfMay}}}
+
+\DefineSource{ORafferty1934}{The Irish Folk Dance Book, Book One (O'Rafferty, 1934)}
+
+\newcommand{\irishDanceName}[5]{
+    \danceName{#1}
+    \index[tune]{#2!#1}
+    \index[type]{#3!#1}
+    \index[formation]{#4!#1}
+    \index[dancersNum]{#5!#1}
+}
+
+% Must be inside "description" block
+\newcommand{\danceFigure}[3]{
+    \begin{minipage}{\linewidth}%
+        \item[#1]{#2}
+        \begin{description}%    
+            #3
+        \end{description}%
+    \end{minipage}%
+    \vfill
+}
