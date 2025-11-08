@@ -33,6 +33,9 @@
 \DefineSource{SweetsOfMay}{\href{https://www.otma.ie/wp-content/uploads/2024/12/The-Sweets-of-May-Final.pdf}{The Sweets of May, 2009\cite{sweetsOfMay}}}
 
 \DefineSource{ORafferty1934}{The Irish Folk Dance Book, Book One (O'Rafferty, 1934)}
+\DefineSource{Burchenal1929}{\href{https://archive.org/details/rinncenaeirannna0000burc}{National Dances of Ireland (Elizabeth Burchenal, 1929)\cite{burchenal1929}}}
+
+
 
 \newcommand{\irishDanceName}[5]{
     \danceName{#1}
@@ -51,4 +54,16 @@
         \end{description}%
     \end{minipage}%
     \vfill
+}
+
+% \newcommand{\bars}[1]{\textit{[#1  taktů]}}
+
+\usepackage{ifthen}
+
+\newcommand{\bars}[1]{%
+  \quad\textit{[%
+    \ifthenelse{\equal{#1}{1}}{#1\ takt}{%
+      \ifthenelse{\(\numexpr#1>1\relax\) \AND \(\numexpr#1<5\relax\)}{#1\ takty}{#1\ taktů}%
+    }%
+  ]}%
 }
