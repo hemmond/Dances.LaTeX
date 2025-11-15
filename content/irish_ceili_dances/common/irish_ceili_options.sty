@@ -1,5 +1,14 @@
 \addbibresource{content/irish_ceili_dances/common/sources.bib}
 
+\usepackage[none]{hyphenat}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+% Disable balancing of indicies
+\usepackage{xpatch}
+\xpatchcmd\theindex{\begin{multicols}}{\begin{multicols*}}{}{\fail}
+\xpatchcmd\endtheindex{\end{multicols}}{\end{multicols*}}{}{\fail}
+
 % Make "description" lists compact.
 \usepackage{enumitem}
 \setlist[description]{noitemsep,topsep=0pt}
@@ -28,7 +37,7 @@
 \DefineSource{Rinceoiri}{Rinceoirí, 1999\cite{rinceoiri}}
 
 \DefineSource{Orpen1931}{\href{https://s3.eu-west-1.amazonaws.com/prints.itma.ie/orpen/3496-BK.pdf}{Dances of Donegal (Grace Orpen, 1931)\cite{orpen1931}}}
-\DefineSource{Sheehan1902}{\href{https://s3.eu-west-1.amazonaws.com/prints.itma.ie/sheehan/3551-BK.pdf}{A Guide to Irish Dancing (J.~J.~Sheehan, 1902)\cite{sheehan1902}}}
+\DefineSource{Sheehan1902}{\href{https://s3.eu-west-1.amazonaws.com/prints.itma.ie/sheehan/3551-BK.pdf}{A~Guide to Irish Dancing (J.~J.~Sheehan, 1902)\cite{sheehan1902}}}
 \DefineSource{OKeeffe1914}{\href{https://www.itma.ie/texts/okeeffe/}{A Handbook of Irish Dances (J.~G.~O’Keeffe, Art O’Brien, 1914)\cite{okeeffe1914}}}
 \DefineSource{SweetsOfMay}{\href{https://www.otma.ie/wp-content/uploads/2024/12/The-Sweets-of-May-Final.pdf}{The Sweets of May, 2009\cite{sweetsOfMay}}}
 
