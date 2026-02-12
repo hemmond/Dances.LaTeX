@@ -38,24 +38,46 @@
 
 \DefineSource{Orpen1931}{\href{https://s3.eu-west-1.amazonaws.com/prints.itma.ie/orpen/3496-BK.pdf}{Dances of Donegal (Grace Orpen, 1931)\cite{orpen1931}}}
 \DefineSource{Sheehan1902}{\href{https://s3.eu-west-1.amazonaws.com/prints.itma.ie/sheehan/3551-BK.pdf}{A~Guide to Irish Dancing (J.~J.~Sheehan, 1902)\cite{sheehan1902}}}
-\DefineSource{OKeeffe1914}{\href{https://www.itma.ie/texts/okeeffe/}{A Handbook of Irish Dances (J.~G.~O’Keeffe, Art O’Brien, 1914)\cite{okeeffe1914}}}
+\DefineSource{OKeeffe1914}{\href{https://www.itma.ie/texts/okeeffe/}{A~Handbook of Irish Dances (J.~G.~O’Keeffe, Art O’Brien, 1914)\cite{okeeffe1914}}}
 \DefineSource{SweetsOfMay}{\href{https://www.otma.ie/wp-content/uploads/2024/12/The-Sweets-of-May-Final.pdf}{The Sweets of May, 2009\cite{sweetsOfMay}}}
 
 \DefineSource{ORafferty1934}{The Irish Folk Dance Book, Book One (O'Rafferty, 1934)}
 \DefineSource{Burchenal1929}{\href{https://archive.org/details/rinncenaeirannna0000burc}{National Dances of Ireland (Elizabeth Burchenal, 1929)\cite{burchenal1929}}}
 
 
+\makeatletter
+\newcommand{\@danceFigureList}{} % storage
+
+\newif\ifwrapdancersnumindex
+\wrapdancersnumindexfalse
+
+\newcommand{\DancersIndexEntry}[2]{%
+  \ifwrapdancersnumindex
+    #1\newline(#2)%
+  \else
+    #1 (#2)%
+  \fi
+}
 
 \newcommand{\irishDanceName}[5]{
     \danceName{#1}
     \index[tune]{#2!#1 (#5)}
     \index[type]{#3!#1}
     \index[formation]{#4!#1}
-    \index[dancersNum]{#5!#1 (#2)}
+    \index[dancersNum]{#5!#1@\DancersIndexEntry{#1}{#2}}%
+    \gdef\@danceFigureList{}%
+    \wrapdancersnumindexfalse
+}
+
+\newcommand{\danceFigureSummary}{%
+    \section*{Shrnutí}
+    \begin{minipage}{\linewidth}%
+        \@danceFigureList
+    \end{minipage}%
 }
 
 % Must be inside "description" block
-\newcommand{\danceFigure}[3]{
+\newcommand{\danceFigure@body}[3]{
     \begin{minipage}{\linewidth}%
         \item[#1]{#2}
         \begin{description}%    
@@ -64,6 +86,21 @@
     \end{minipage}%
     \vfill
 }
+
+\newcommand{\danceFigure}{%
+    \@ifstar{\danceFigure@star}{\danceFigure@nostar}%
+}
+
+\newcommand{\danceFigure@nostar}[3]{%
+    \g@addto@macro\@danceFigureList{\item[#1]{#2}}%
+    \danceFigure@body{#1}{#2}{#3}%
+}
+
+\newcommand{\danceFigure@star}[3]{%
+    \danceFigure@body{#1}{#2}{#3}%
+}
+
+\makeatother
 
 % \newcommand{\bars}[1]{\textit{[#1  taktů]}}
 
