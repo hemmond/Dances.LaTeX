@@ -1,3 +1,4 @@
+\usepackage{morewrites}
 \usepackage[
     activate={true,nocompatibility},
     final,
@@ -33,11 +34,7 @@
 
 \def\nnotes{\vnotes1.6\elemskip}
 \def\nnnotes{\vnotes1.28\elemskip}
-%\newcommand{\HRule}{\par
-%  \vspace*{\dimexpr-\parskip-\baselineskip+0pt}
-%  \noindent\rule{\linewidth}{0.5mm}\par
-%  \vspace*{\dimexpr-\parskip-.5\baselineskip+0pt}}
-%\newcommand{\HRule}{\par\noindent\rule{\textwidth}{1pt}}
+\def\voltadot{}
 \newcommand{\HRule}{\vspace*{1pt}\hrule\vspace*{1pt}}
 
 \usepackage{lettrine}   % Enables dropped capital letters at the beginning of chapters
@@ -53,12 +50,18 @@
 \usepackage{imakeidx}
 \usepackage{array}
 
+\usepackage{comment}
+
+\includecomment{czechDescription}
+\excludecomment{czechDescriptionTemplate}
+\excludecomment{templateNotes}
+\includecomment{modernNotes}
+
 \makeatletter
     \newcommand{\danceName}[1]{\chapter{#1}\def\DanceNameStr{#1}\@ifnextchar\bgroup{\danceNameInt}{}}
+    \newcommand{\danceNameS}[2]{\chapter{#1}\def\DanceNameStr{#2}\@ifnextchar\bgroup{\danceNameInt}{}}
     \newcommand{\danceNameInt}[1]{\index[#1]{\DanceNameStr}\@ifnextchar\bgroup{\danceNameInt}{}}
 \makeatother % variable argument command \danceName defining chapter name and also adding said chapter to any number of indexes as following parameters
-
-%\newcommand{\hsp}{\kern 1pt}    % Custom command for fine-tuning spacing in nested quotation marks
 
 % Paragraph formatting settings
 \renewcommand{\baselinestretch}{1.125}      % Increases line spacing for improved readability

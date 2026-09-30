@@ -1,0 +1,93 @@
+\danceNameS{Bro{\s}eley A{\s\s}embly}{Broseley Assembly}{longMin}{thompson1776}%danceName must be followed by blank line for proper command parsing
+
+{\large Longways double minor; $AABB$ adlib\hfill\Source{Thompson1776}}
+
+\begin{music}
+    \smallmusicsize%
+    \parindent0mm%
+    \raggedbottom%
+    \stafftopmarg=1\Interligne%
+    \staffbotmarg=1\Interligne%
+    \nobarnumbers%
+    \generalmeter{\allabreve}%
+    \generalsignature{0}%
+    \startpiece% From here on now actual notes start. NO UNNECESSARY WHITESPACES, end every line with %comment%
+% https://icking-music-archive.org/software/musixtex/musixdoc.pdf
+% every bar of music starts with either of nnnotes, nnotes, notes, notesp, Notes, Notesp, NOtes, NOTes, NOTEs or NOTES.
+% it determines relative spacing within that bar between individual notes, in increasing steps in order above.
+% every note is two letters - length and stem direction, both in small letters, here for clarity in capitals
+% \wh (whole note, exception from naming format as it has no stem)
+% stems may be Up, Low, or Auto (\Xu, \Xl, \Xa). explicit is preferable but auto usually works
+% note lengths are Half, Quarter, eight( C ), 16th, 32nd, 64th and 128th are CC, CCC, CCCC, CCCCC respectively
+% (\hX, \qX, \cX, \ccX, \cccX, \ccccX, \cccccX)
+% Immediately after follows the position of note - either numerical (0 is the lowest line, 1 is space above,
+% two is second lowest line...) or a letter position (has to be written with space inbetween it and the note,
+% letters are a-z and A-Z starting from _somewhere_)
+% Every bar of music ends with \en\xbar% (or \en\alaligne% if you want the next bar to start on next line)
+%
+% Sharps act like a note on their own and are written \shX (X again position as number or letter), similarly
+% flats \flX. Appending p to any note name (e.g. \qup) makes that note with a dot after (prolonged).
+%
+% Beams may be coded using \IXYABCD, where X is cardinality of beam (b for single beam, bb for double, up to
+% bbbb for quadruple), Y is direction (u or l), A is reference number (can be usually always 0), B is pitch of
+% starting note (number or letter), C pitch of ending note, D amount of notes on the beam -1. E.g. \Ibbu0132
+% for a double upper beam extending over 3 notes, where the first note is 1 and the last note is 3. Notes are
+% then added to the beam using \qbXY, where X is the beam reference number (A in beam definition) and Y is note
+% pitch as normal. Before last note of beam, \tbuX / \tblX is used to correctly terminate the beam, X again
+% reference number
+% For beams with only two notes, \DqbuXY, \DqblXY, \DqbbuXY, \DqbblXY may be used instead, XY being the pitches
+% of the two notes, nothing further is required then.
+%
+% Pauses/rests are coded (whole-half-quarter-...) \pause-\hp-\qp-\ds-\qs-\hs-\qqs, dotting is possible as usual
+%
+% Slurs may be coded using \slurXYAB, where X is start note pitch, Y is end note pitch, A is direction (u or d) and B
+% is amount of notes in slur - 1. E.g. \slur13u2 is a three-note upper slur from note 1 to note 3
+%
+% \en\zzleftrightrepeat may be used instead of other methods of ending bar to set a right repeat, new line, and set e
+% left repeat, \en\zzrightrepeat without inserting the left repeat on following line, \en\zleftrightrepeat without
+% newline. \zleftrepeat before start of bar inserts left repeat there, \en\setrightrepeat inserts right repeat without
+% forcing line break
+% \sk for horizontal space of 1 noteskip, \hsk half-noteskip
+%%%%%%%% PART A %%%%%%%%
+    \notes\ql5\slur46u2\Ibl0462\qb04\nbbl0\qb05\tbl0\qb06\ql5\qu2\en\xbar%
+    \notes\Qqbl3546\ql5\qu2\en\xbar%
+    \notes\Qqbu5202\Qqbu5202\en\xbar%
+    \notes\Qqbl7987\en\nnnotes\tinynotesize\qu7\en\notes\normalnotesize\hl6\en\leftrightrepeat\alaligne%
+%%%%%%%% PART B %%%%%%%%
+    \notes\ql9\slur87u1\Dqbl87\ql8\qu1\en\xbar%
+    \notes\ql8\slur76u1\Dqbl76\ql7\ql5\en\xbar%
+    \notes\Qqbl8765\Ibu01b3\qb03\tbl0\qb0{10}\qb09\tbl0\qb08\en\xbar%
+    \notes\Qqbl7654\hl5\en\leftrightrepeat%
+    \endpiece%
+\end{music}
+
+Hands acro{\s}s round \Thaa and back
+again \Thaaa cro{\s}s over \Thab right and
+left \Thaba
+\HRule
+\HRule
+\vspace{1em}
+\begin{czechDescriptionTemplate}
+\begin{description}
+    \item[A1]
+    \item[1-2]Popis v českém jazyce píšeme na doby odpovídající hudbě, kterou máme k dispozici
+    \item[3-4]Používáme ustálená spojení u typických figur, kde to dává smysl
+    \item[1-4]Jinak používáme natolik přesný popis, abychom ho sami pochopili kdybychom tanec neznali
+    \item[5-8]Set and turn vlevo
+    \item[9-16]Ditto, set and turn vpravo
+    \item[B1]
+    \item[1-2] Zapisujeme tanec v pořadí, v jakém má být tančen, nepřeskakujeme části
+    \item[3-4] 1.P přejde k 2.D a podá levou ruku
+    \item[5-6] 1.P přejde k 3.D a podá pravou, pak levou ruku
+    \item[7-8] 1.P políbí 3.D na pravou a levou tvář
+    \item[9-10] 1.P a 3.D zátočka za obě o celé, 2.P a 3.P step up
+    \item[11-20] dtto vše, ale provádí 1.D, na konci 2.D a 3.D step up
+    \item[A2]
+    \item[1-16] Sides R, set and turn, sides L, set and turn
+    \item[B2] = B1
+    \item[A3]
+    \item[1-16] Arms R, set and turn, arms L, set and turn
+    \item[B3] = B1
+\end{description}
+\todo{Popis tance}
+\end{czechDescriptionTemplate}

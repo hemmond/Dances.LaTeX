@@ -5,4 +5,4 @@ all:
 	mv main.pdf out.pdf
 
 clean:
-	rm -rf main.aux main.toc missfont.log musixtex.log *.idx *.ilg *.ind main.out *.bbl *.bcf *.blg main.run.xml
+	rm -rf main.pdf main.aux singleDev.pdf singleDev.aux main.toc missfont.log musixtex.log *.idx *.ilg *.ind main.out singleDev.out *.bbl *.bcf *.blg main.run.xml singleDev.run.xml midiOutput comment.cut

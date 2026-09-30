@@ -1,25 +1,46 @@
 \addbibresource{content/jane_austen_cz/common/sources.bib}
 
-% the "e over y" letter (thorn variation used after invention of print)
+
 \font\vse=cmr10 at 5pt\setbox0=\hbox{y} % https://tex.stackexchange.com/a/251527
-\newcommand{\ye}{\raise\ht0\rlap{\hbox to \wd0{\hfil\vse e\hfil}}\box0}
+\newcommand{\ye}{\raise\ht0\rlap{\hbox to \wd0{\hfil\vse e\hfil}}\box0} % the "e over y" letter (thorn variation used after invention of print)
+\newcommand{\s}{{\longs}}
+\newcommand{\midifyable}{}
+\newcommand{\notmidifyable}[1]{}
+\newcommand\Pfa{\includegraphics[width=.8em]{content/jane_austen_cz/common/Playford1}}
+\newcommand\Pfb{\includegraphics[width=.8em]{content/jane_austen_cz/common/Playford2}}
+\newcommand\Pfc{\includegraphics[width=.8em]{content/jane_austen_cz/common/Playford3}}
+\newcommand\PfM{\includegraphics[width=.8em]{content/jane_austen_cz/common/PlayfordMan}}
+\newcommand\PfW{\includegraphics[width=.8em]{content/jane_austen_cz/common/PlayfordWo}} % Playford-style symbols for 1st, 2nd and 3rd repetition, Man, and Woman
 
-% Playford-style symbols for 1st, 2nd and 3rd repetition, Man, and Woman
-\newcommand{\Pfa}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Playford1}}
-\newcommand{\Pfb}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Playford2}}
-\newcommand{\Pfc}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Playford3}}
-\newcommand{\PfM}{\includegraphics[width=.8em]{content/jane_austen_cz/common/PlayfordMan}}
-\newcommand{\PfW}{\includegraphics[width=.8em]{content/jane_austen_cz/common/PlayfordWo}}
+\newcommand\Thaaa{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson111}}
+\newcommand\Thaab{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson112}}
+\newcommand\Thaba{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson121}}
+\newcommand\Thabb{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson122}}
+\newcommand\Thbaa{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson211}}
+\newcommand\Thbab{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson212}}
+\newcommand\Thbba{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson221}}
+\newcommand\Thbbb{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson222}} %thompson-style symbols for music repetition. First symbol amount of dots above, second amount of lines, third amount of dots below
+\newcommand\Thaac{\Thaba} %TODO these symbols below, appearing for instance in The Frisky (Thompson 1774)
+\newcommand\Thbac{\Thbba}
+\newcommand\Thaad{\Thabb}
+\newcommand\Thbad{\Thbbb}
+\newcommand\Thaa{\Thaaa}
+\newcommand\Thab{\Thaba}
+\newcommand\Thba{\Thbaa}
+\newcommand\Thbb{\Thbba}
+\newcommand\Thac{\Thaab}
+\newcommand\Thad{\Thabb}
+\newcommand\Thbc{\Thbab}
+\newcommand\Thbd{\Thbbb}
 
-% Thompson-style symbols for music repetition. First symbol amount of dots above, second amount of lines, third amount of dots below
-\newcommand{\Thaaa}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson111}}
-\newcommand{\Thaab}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson112}}
-\newcommand{\Thaba}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson121}}
-\newcommand{\Thabb}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson122}}
-\newcommand{\Thbaa}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson211}}
-\newcommand{\Thbab}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson212}}
-\newcommand{\Thbba}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson221}}
-\newcommand{\Thbbb}{\includegraphics[width=.8em]{content/jane_austen_cz/common/Thompson222}}
+\renewcommand{\Tqbl}[3]{\Ibl0{#1}{#3}2\qb0{#1}\qb0{#2}\tbl0\qb0{#3}}
+\renewcommand{\Tqbu}[3]{\Ibu0{#1}{#3}2\qb0{#1}\qb0{#2}\tbu0\qb0{#3}}
+\renewcommand{\Qqbl}[4]{\Ibl0{#1}{#4}3\qb0{#1}\qb0{#2}\qb0{#3}\tbl0\qb0{#4}}
+\renewcommand{\Qqbu}[4]{\Ibu0{#1}{#4}3\qb0{#1}\qb0{#2}\qb0{#3}\tbu0\qb0{#4}}
+\renewcommand{\Tqbbl}[3]{\Ibbl0{#1}{#3}2\qb0{#1}\qb0{#2}\tbl0\qb0{#3}}
+\renewcommand{\Tqbbu}[3]{\Ibbu0{#1}{#3}2\qb0{#1}\qb0{#2}\tbu0\qb0{#3}}
+\renewcommand{\Qqbbl}[4]{\Ibbl0{#1}{#4}3\qb0{#1}\qb0{#2}\qb0{#3}\tbl0\qb0{#4}}
+\renewcommand{\Qqbbu}[4]{\Ibbu0{#1}{#4}3\qb0{#1}\qb0{#2}\qb0{#3}\tbu0\qb0{#4}}
 
 % Prepare indices
 \makeindex[name=longDMin,title={Longways double minor}]
@@ -28,10 +49,17 @@
 \makeindex[name=set4,title={Sets of four}]
 \makeindex[name=set6,title={Sets of six}]
 \makeindex[name=set12,title={Sets of twelve}]
- 
+\makeindex[name=thompson1762,title={Twenty Four Country Dances for the Year 1776 With proper Tunes and Directions to each Dance, as they are performed at Court, Bath, and all Publick Entertainments: The Tunes proper for the Violin, German-Flute and Hautboy.}]
+\makeindex[name=thompson1774,title={Twenty Four Country Dances for the Year 1774 With proper Tunes \& Directions to each Dance, as they are Performed at Court, Bath \& all Publick A{\longs}semblys}]
+\makeindex[name=thompson1776,title={Twenty Four Country Dances for the Year 1776 With proper Tunes \& Directions to each Dance, as they are Performed at Court, Bath \& all Publick A{\longs}semblys}]
+
  
 % Sources
 \DefineSource{Playford1651}{\href{https://www.pbm.com/~lindahl/playford_1651/playford_1651.pdf}{Playford, 1651\cite{playford1651}}}
-\DefineSource{Thompson1774}{\href{https://www.efdss.org/vwml-digitised-resources/historic-dance-and-tune-books/12991-thompsons1774}{Thompson, 1774}}
+\DefineSource{Playford1690}{\href{https://archive.org/details/bim_early-english-books-1641-1700_the-dancing-master-_playford-john_1690}{Playford, 1690\cite{playford1690}}}
+\DefineSource{Playford1695}{\href{https://archive.org/details/bim_early-english-books-1641-1700_the-dancing-master-_playford-john_1695/}{Playford, 1695\cite{playford1695}}}
+\DefineSource{Thompson1762}{\href{https://www.efdss.org/vwml-digitised-resources/historic-dance-and-tune-books/12988-thompsons1762}{Thompson, 1762}\cite{thompson1762}}
+\DefineSource{Thompson1774}{\href{https://www.efdss.org/vwml-digitised-resources/historic-dance-and-tune-books/12991-thompsons1774}{Thompson, 1774}\cite{thompson1774}}
+\DefineSource{Thompson1776}{\href{https://www.efdss.org/vwml-digitised-resources/historic-dance-and-tune-books/12992-thompsons1776}{Thompson, 1776}\cite{thompson1776}}
+\DefineSource{Straight1784}{\href{https://www.efdss.org/vwml-digitised-resources/historic-dance-and-tune-books/12987-straights1784}{Straight, 1784}\cite{straight1784}}
 \DefineSource{Porter1931}{\href{https://www.efdss.org/vwml-digitised-resources/historic-dance-and-tune-books/12991-thompsons1774}{Porter, Heffer, Heffer, 1931\cite{porter1933}}}
-

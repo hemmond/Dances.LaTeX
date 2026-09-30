@@ -9,30 +9,85 @@
 \newcommand{\publisher}{JaneAusten.cz}          % Publisher name (optional)
 \newcommand{\edition}{First edition}            % Edition (as text) (optional)
 \newcommand{\editionyear}{2025}                 % Edition year for print run (optional)
-% \newcommand{\isbn}{}                            % ISBN (optional)
 
-% \newcommand{\publisherlogo}{
-%     \includegraphics[width=0.07\linewidth]{frontmatter/logo-black.png}
-% }
-
+\def\contentRoot{content/jane_austen_cz}
+\def\includeincomplete{1}
 % --- Chapter inputs ---
 \newcommand{\bookcontent}{
-    \inputdance{content/jane_austen_cz/playford1651explanation}
-    \inputdance{content/jane_austen_cz/all_in_a_garden_green}
-    \inputdance{content/jane_austen_cz/blew_cap}
-    \inputdance{content/jane_austen_cz/emmas_waltz}
-    \inputdance{content/jane_austen_cz/the_fandango}
-    \inputdance{content/jane_austen_cz/the_fandango_set3}
-    \inputdance{content/jane_austen_cz/hole_in_the_wall}
-    \inputdance{content/jane_austen_cz/indian_queen}
-    \inputdance{content/jane_austen_cz/jamaica}
-    \inputdance{content/jane_austen_cz/miss_hamiltons_reel}
-    \inputdance{content/jane_austen_cz/my_lord_byrons_maggot}
-    \inputdance{content/jane_austen_cz/pauls_alley}
-    \inputdance{content/jane_austen_cz/rakes_of_rochester}
-    \inputdance{content/jane_austen_cz/row_well_ye_mariners}
-    \inputdance{content/jane_austen_cz/swedish_country_dance}
-    \inputdance{content/jane_austen_cz/upon_a_summers_day}
+    \inputdance{\contentRoot/playford1651/to_the_ingenious_reader}
+    \inputdance{\contentRoot/playford1651/playford1651explanation}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_adieu}}{} %chybí české instrukce
+    \inputdance{\contentRoot/all_in_a_garden_green}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/straight1784/the_arcadian_nuptials}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/playford1651/the_begger_boy}}{} %chybí české instrukce, hudba
+    \inputdance{\contentRoot/playford1651/blew_cap}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/playford1651/boate_man}}{} %chybí české instrukce, hudba
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/playford1651/bobbing_joe}}{} %chybí české instrukce, hudba
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_boot}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/bromley_bells}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/broseley_assembly}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/cranford_lodge}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_comical_fellow}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/la_contess}}{} %chybí české instrukce
+    \inputdance{\contentRoot/thompson1774/the_dove_house}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_dressd_ship}}{} %chybí české instrukce
+    \inputdance{\contentRoot/emmas_waltz}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_fair_maid_of_the_inn}}{} %chybí české instrukce
+    \inputdance{\contentRoot/thompson1774/the_fandango}
+    \inputdance{\contentRoot/the_fandango_set3}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_feathers}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/fete_champetre}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1762/the_flirtation}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_french_assembly}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_frisky}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/guardian_angels}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/harlequin_in_the_woods}}{} %chybí české instrukce
+    \inputdance{\contentRoot/hole_in_the_wall}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/hook_or_by_crook}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/indian_queen}}{} %chybí české instrukce
+    \inputdance{\contentRoot/jamaica}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/a_jolly_young_waterman}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/justice_ballance}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_lasses_of_portsmouth}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_liberal_lover}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1762/lincolnshire_ladds}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1762/lincolnshire_lasses}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/maccarony_dance}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/marione}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/may_day_morn}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_merry_hunters}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_milk_maid}}{} %chybí české instrukce
+    \inputdance{\contentRoot/thompson1774/miss_hamiltons_reel}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/miss_mollys_wigg}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/miss_tashis_maggot}}{} %chybí české instrukce
+    \inputdance{\contentRoot/my_lord_byrons_maggot}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/playford1651/the_night_peece.tex}}{} %chybí české instrukce, hudba
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/la_nouvelle_hambourgh}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/now_or_never}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/once_a_night}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/playford1651/parsons_farewell}}{} %chybí české instrukce, hudba
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_parting_lovers}}{} %chybí české instrukce
+    \inputdance{\contentRoot/pauls_alley}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/polly_clevelands_favourite}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/portsmouth_review}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1762/pritty_kitty}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_queens_night_cap}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_rainbow}}{} %chybí české instrukce
+    \inputdance{\contentRoot/rakes_of_rochester}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_recruits}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_regatta}}{} %chybí české instrukce
+    \inputdance{\contentRoot/row_well_ye_mariners}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_royal_dozen}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_royal_salute}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_sacilian_peasant}}{} %chybí české instrukce
+    \inputdance{\contentRoot/swedish_country_dance}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/st_johns_day}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1762/tristram_shandy}}{} %chybí české instrukce
+    \inputdance{\contentRoot/playford1651/upon_a_summers_day}
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/the_volatile}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1774/the_wedding_ring}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/wenlock_election}}{} %chybí české instrukce
+    \ifthenelse{\includeincomplete=1}{\inputdance{\contentRoot/thompson1776/who_cares_for_you}}{} %chybí české instrukce
 }
 
 \newcommand{\loadappendix}{ %Mandatory, keep empty if not required.
@@ -44,8 +99,11 @@
     \printindex[set4]
     \printindex[set6]
     \printindex[set12]
+%     \printindex[thompson1762]
+%     \printindex[thompson1774]
+%     \printindex[thompson1776]
 
-    \printbibliography  % It was put here because bibliography should not be mandatory.
+    \printbibliography
 }
 
 

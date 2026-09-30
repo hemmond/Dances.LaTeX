@@ -10,4 +10,5 @@
 *.bbl
 *.bcf
 *.blg
+*.mw
 main.run.xml

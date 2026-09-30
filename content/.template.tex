@@ -6,6 +6,7 @@
 {\large Setup; music\hfill Author, year}  % E.g. {\large Longway for six; 3x AABB\hfill Playford, 1651}
 \todo{Name and author}
 
+\begin{templateNotes}
 \begin{music}
     \smallmusicsize%
     \parindent0mm%
@@ -13,7 +14,7 @@
     \stafftopmarg=1\Interligne%
     \staffbotmarg=1\Interligne%
     \nobarnumbers%
-    \generalmeter{\allabreve}%  4/4 meter (C meter). Replace with \meterfrac{X}{Y} for X over Y meter
+    \generalmeter{\allabreve}%  2/2 meter (C| meter). Replace with \meterfracXY for X over Y meter, or \meterC for a 4/4 C meter
     \generalsignature{0}% Positive general signature for N amount of sharps for the whole piece, negative for N flats
     \startpiece% From here on now actual notes start. NO UNNECESSARY WHITESPACES, end every line with %comment%
 % https://icking-music-archive.org/software/musixtex/musixdoc.pdf
@@ -51,6 +52,7 @@
 % left repeat, \en\zzrightrepeat without inserting the left repeat on following line, \en\zleftrightrepeat without
 % newline. \zleftrepeat before start of bar inserts left repeat there, \en\setrightrepeat inserts right repeat without
 % forcing line break
+% \sk for horizontal space of 1 noteskip, \hsk half-noteskip
 %%%%%%%% PART A %%%%%%%%
     \zleftrepeat%
     \nnotes\qa0\qa1\qa2\qa3\en\xbar%
@@ -76,9 +78,10 @@
     \endpiece%
     \todo{Music}
 \end{music}
+\end{templateNotes}
 
 \begin{multicols}{2}
-    This is a template original dance description. It cu{\longs}tomary u{\longs}e{\longs} long S whereever it appears in original text, and \Pfa, resp \Pfb to mark the repetition symbols from original texts
+    This is a template original dance description. It cu{\s}tomary u{\s}e{\s} long S whereever it appears in original text, and \Pfa, resp \Pfb to mark the repetition symbols from original texts
     \columnbreak
 
     Formating of original text is maintained as closely as possible where it makes sense
@@ -92,6 +95,7 @@ The original description is then ended by a double \verb!\Hrule!
 \HRule
 \HRule
 \vspace{1em}
+\begin{czechDescriptionTemplate}
 \begin{description}
     \item[A1]
     \item[1-2]Popis v českém jazyce píšeme na doby odpovídající hudbě, kterou máme k dispozici
@@ -114,3 +118,4 @@ The original description is then ended by a double \verb!\Hrule!
     \item[B3] = B1
 \end{description}
 \todo{Popis tance}
+\end{czechDescriptionTemplate}
